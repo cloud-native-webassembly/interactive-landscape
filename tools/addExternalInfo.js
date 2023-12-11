@@ -215,6 +215,8 @@ async function main() {
           var crunchbaseInfo = _.clone(_.find(crunchbaseEntries, {url: node.crunchbase}));
           if (crunchbaseInfo) {
             delete crunchbaseInfo.url;
+          } else {
+            crunchbaseInfo = _.clone({ ...settings.anonymous_organization, parents: [] });
           }
           node.crunchbase_data = crunchbaseInfo;
         }

@@ -200,6 +200,8 @@ async function main () {
       const isEndUser = () => {
         if (node.enduser) {
           return true;
+        } else {
+          return false;
         }
 
         return (settings.membership[parts[1]] || {}).enduser;
