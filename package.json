@@ -39,7 +39,8 @@
     "reset-tweet-count": "node tools/resetTweetCount.js",
     "prepublish": "cp yarn.lock _yarn.lock",
     "postpublish": "rm _yarn.lock || true",
-    "preview": "yarn fetch && yarn prepare-landscape && yarn export-functions"
+    "preview": "yarn fetch && yarn prepare-landscape && yarn export-functions",
+    "build-landscape": "yarn prepare-landscape"
   },
   "author": "CNCF",
   "license": "Apache-2.0",

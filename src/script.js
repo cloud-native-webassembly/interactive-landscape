@@ -972,7 +972,6 @@ const CncfLandscapeApp = {
     if (newUrl !== this.previousUrl) {
       history.pushState(CncfLandscapeApp.state, '', newUrl);
       this.previousUrl = newUrl;
-      window.ga('send', 'pageview', newUrl);
     }
   },
   hideSelectedItem: function() {

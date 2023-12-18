@@ -119,48 +119,12 @@ async function main() {
   const description = `${settings.global.meta.description}. Updated: ${process.env.lastUpdated}`;
   const favicon = '/favicon.png';
 
-  const ga = `
-   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-         ga('create', '${process.env.GA}', 'auto');
-         ga('send', 'pageview');
-  `
-  let ga4 = '';
-  if (settings.global.repo === 'cncf/landscape') {
-    ga4 = `
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6VMPWFRDW"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-T6VMPWFRDW');
-      </script>
-    `
-  }
+
 
   const headers = `
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>${settings.global.meta.title}</title>
       <meta name="description" content="${description}" />
-      ${!settings.global.meta.extra ? `
-      <meta property="og:locale" content="en_US"/>
-      <meta property="og:type" content="website"/>
-      <meta property="og:title" content="${settings.global.meta.title}"/>
-      <meta property="og:description" content="${description }"/>
-      <meta property="og:url" content="${settings.global.website}"/>
-      <meta property="og:site_name" content="${settings.global.meta.title}"/>
-      <meta property="fb:admins" content="${settings.global.meta.fb_admin}"/>
-      <meta property="og:image" content="${favicon}" />
-      <meta property="og:image:secure_url" content="${favicon}" />
-      <meta name="twitter:card" content="summary"/>
-      <meta name="twitter:site" content="${settings.global.meta.twitter}"/>
-      <meta name="twitter:creator" content="${settings.global.meta.twitter}"/>
-      ` : settings.global.meta.extra }
-      <meta name="google-site-verification" content="${settings.global.meta.google_site_verification}"/>
-      <meta name="msvalidate.01" content="${settings.global.meta.ms_validate}"/>
       <link rel="icon" type="image/png" href="/favicon.png" />
   `
   const renderPage = ({homePage, mode}) => {
@@ -169,8 +133,6 @@ async function main() {
     <html lang="en">
     <head>
     ${headers}
-    <script>${ga}</script>
-    ${ga4}
     <style>
       ${fonts}
       ${processedCss}
@@ -282,7 +244,6 @@ async function main() {
     let result = `
     <!DOCTYPE html>
     ${headers}
-    <script>${ga}</script>
     <style>
       ${fonts}
       ${processedCss}

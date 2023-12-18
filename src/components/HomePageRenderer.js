@@ -162,26 +162,6 @@ module.exports.render = function({settings, guidePayload, hasGuide, bigPictureKe
             ${renderFilterHeadquarters()}
             ${renderFilterCompanyType()}
             ${renderFilterIndustries()}
-
-            <a class="filters-action export">
-              ${icons.export}
-              <span>Download as CSV</span>
-            </a>
-
-            <div class="sidebar-presets">
-              <h4>Example filters</h4>
-              ${ (settings.presets || []).map(preset => `
-                <a data-type="internal" class="preset" href="${preset.url}">
-                  ${h(preset.label)}
-                </a> `
-              ).join('')}
-            </div>
-            ${ (settings.ads || []).map( (entry) => `
-                <a data-type="external" target="_blank" class="sidebar-event" href="${entry.url}" title="${h(entry.title)}">
-                  <img src="${assetPath(entry.image)}" alt="${entry.title}" />
-                </a>
-            `).join('') }
-
           </div>
         </div>
         <div class="app-overlay"></div>
@@ -189,8 +169,6 @@ module.exports.render = function({settings, guidePayload, hasGuide, bigPictureKe
         <div class="main">
           <div class="disclaimer">
             <span> ${settings.home.header} </span>
-            Please <a data-type="external" target="_blank" href="${(settings.global.self_hosted_repo || false) ? "" : "https://github.com/"}${settings.global.repo}">open</a> a pull request to
-            correct any issues. Greyed logos are not open source. Last Updated: ${process.env.lastUpdated}
           </div>
           <h4 class="summary"></h4>
           <div class="cards-section">
