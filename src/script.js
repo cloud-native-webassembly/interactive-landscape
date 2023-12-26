@@ -985,7 +985,8 @@ const CncfLandscapeApp = {
   },
   fetchApiData: async function() {
     const search = this.stringifyApiUrl();
-    const url = `${this.basePath}/api/ids?${search}`;
+    // const url = `${this.basePath}/api/ids?${search}`;
+    const url = `${this.basePath}/data/landscape.data.json`;
     const response = await fetch(url);
     const json = await response.json();
     return json;
