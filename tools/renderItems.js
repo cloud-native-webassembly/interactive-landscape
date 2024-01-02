@@ -169,7 +169,7 @@ async function main() {
   await fs.writeFile(path.resolve(distPath, 'guide.html'), renderPage({homePage: homePageGuide, mode: 'guide'}));
 
   const homePage = HomePageRenderer.render({settings, bigPictureKey: 'main', hasGuide: guideJson});
-  await fs.writeFile(path.resolve(distPath, 'index.html'), renderPage({homePage: homePage, mode: 'main'}));
+  await fs.writeFile(path.resolve(distPath, 'landscape.html'), renderPage({homePage: homePage, mode: 'main'}));
 
   const cardsPage = HomePageRenderer.render({settings, hasGuide: guideJson});
   await fs.writeFile(path.resolve(distPath, 'card-mode.html'), renderPage({homePage: cardsPage, mode: 'card'}));
