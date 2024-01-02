@@ -80,7 +80,7 @@ module.exports.render = function({settings, guidePayload, hasGuide, bigPictureKe
       url: section.url,
       title: section.name,
       shortTitle: section.short_name,
-      mode: section.url === settings.big_picture.main.url ? 'main' : section.url,
+      mode: section.url === settings.big_picture.main && settings.big_picture.main.url ? 'main' : section.url,
       tabIndex: section.tab_index
     }
   })
