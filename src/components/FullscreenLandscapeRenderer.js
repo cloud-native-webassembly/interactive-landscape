@@ -29,19 +29,6 @@ module.exports.render = function({landscapeSettings, landscapeContent, version})
             padding-bottom: 3px;
             border-radius: 5px;
           ">${landscapeSettings.fullscreen_header}</div>
-          ${ !landscapeSettings.fullscreen_hide_grey_logos ? `<div style="
-            position: absolute;
-            top: 15px;
-            right: 12px;
-            font-size: 11px;
-            background: #eee;
-            color: rgb(100,100,100);
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 3px;
-            padding-bottom: 3px;
-            border-radius: 5px;
-          ">Greyed logos are not open source</div>` : '' }
           <div style="
             position: absolute;
             top: 10px;

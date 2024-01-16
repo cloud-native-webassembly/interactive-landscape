@@ -16,11 +16,7 @@ module.exports = results => (`<!DOCTYPE html>
                       <img src="${landscape.name}/images/right-logo.svg" style="height: 35px"
                            alt="${landscape.name}"/>
                     </div>
-                    ${ exitCode === 0 ?
-                      `<a href="${landscape.name}/" target="_blank" rel="noopener noreferrer">
-                        <img src="${landscape.name}/images/landscape_preview.png"/>
-                       </a>` :
-                       `<div class="message is-danger is-large"><div class="message-body" style="border: none; text-align: center">FAILED</div></div>` }
+
                   </div>
                 `
             }).join('')}
