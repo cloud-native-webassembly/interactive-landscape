@@ -671,7 +671,7 @@ const CncfLandscapeApp = {
 
       activeSection: hash,
 
-      mode: parseMode(params.get('format') || pathname) || CncfLandscapeApp.initialMode,
+      mode: parseMode(params.get('format') || 'wasm') || CncfLandscapeApp.initialMode,
       cardStyle: parseParamStyle(params.get('style')) || parseCardStyle(pathname),
 
       grouping: params.get('grouping') || 'project',
@@ -968,11 +968,11 @@ const CncfLandscapeApp = {
     if (CncfLandscapeApp.state.embed) {
       return;
     }
-    const newUrl = CncfLandscapeApp.stringifyBrowserUrl(CncfLandscapeApp.state);
-    if (newUrl !== this.previousUrl) {
-      history.pushState(CncfLandscapeApp.state, '', newUrl);
-      this.previousUrl = newUrl;
-    }
+    // const newUrl = CncfLandscapeApp.stringifyBrowserUrl(CncfLandscapeApp.state);
+    // if (newUrl !== this.previousUrl) {
+    //   history.pushState(CncfLandscapeApp.state, '', newUrl);
+    //   this.previousUrl = newUrl;
+    // }
   },
   hideSelectedItem: function() {
     if (this.state.showModal) {

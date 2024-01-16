@@ -127,32 +127,10 @@ module.exports.render = function({settings, guidePayload, hasGuide, bigPictureKe
       <div class="main-parent">
         <button class="sidebar-show" role="none" aria-label="show sidebar">${icons.sidebar}</button>
         <div class="header_container">
-          <div  class="header">
-            <span class="landscape-logo">
-              <a aria-label="reset filters" class="nav-link" href="/">
-                <img alt="landscape logo" src="${assetPath("images/left-logo.svg")}" />
-              </a>
-            </span>
-            <a rel="noopener noreferrer noopener noreferrer"
-            class="landscapeapp-logo"
-            title="${h(settings.global.short_name)}"
-            target="_blank"
-            href="${settings.global.company_url}">
-              <img src="${assetPath("/images/right-logo.svg")}" title="${h(settings.global.short_name)}" />
-            </a>
-          </div>
         </div>
         <div class="sidebar">
           <div class="sidebar-scroll">
             <div class="sidebar-collapse">+</div>
-            ${ hasGuide ? `
-              <div class="guide-toggle">
-                <span class="toggle-item active">Landscape</span>
-                <span class="toggle-item "><a href="/guide">Guide</a></span>
-              </div> ` : ''
-            }
-            <a class="filters-action reset-filters">${icons.reset}<span>Reset Filters</span>
-            </a>
             ${renderGroupingSelect()}
             ${renderSortBySelect()}
             ${renderFilterCategory()}
